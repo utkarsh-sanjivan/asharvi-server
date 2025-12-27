@@ -90,7 +90,11 @@ class Server {
       origin: (origin, callback) => {
         const allowedOrigins = process.env.CORS_ORIGIN
           ? process.env.CORS_ORIGIN.split(',').map(o => o.trim())
-          : ['http://localhost:3000'];
+          : [
+              'http://localhost:3000',
+              'http://localhost:5173',
+              'https://utkarsh-sanjivan.github.io'
+            ];
         
         // Allow requests with no origin (mobile apps, Postman, etc.)
         if (!origin) {
