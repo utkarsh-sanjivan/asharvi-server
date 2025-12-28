@@ -12,6 +12,7 @@ const courseRoutes = require('./coursesRoutes');
 const instructorRoutes = require('./instructorsRoutes');
 const parentRoutes = require('./parentRoutes');
 const questionRoutes = require('./questionsRoutes');
+const paymentRoutes = require('./paymentRoutes');
 
 // Import utilities
 const logger = require('../utils/logger');
@@ -70,6 +71,7 @@ router.use('/courses', courseRoutes);
 router.use('/instructors', instructorRoutes);
 router.use('/parents', parentRoutes);
 router.use('/questions', questionRoutes);
+router.use('/payments', paymentRoutes);
 
 // API Information endpoint
 router.get('/', (req, res) => {

@@ -10,6 +10,7 @@ const childNutritionController = require('./childNutritionController');
 const courseController = require('./courseController');
 const instructorController = require('./instructorController');
 const parentController = require('./parentController');
+const paymentController = require('./paymentController');
 const questionController = require('./questionController');
 
 module.exports = {
@@ -21,5 +22,6 @@ module.exports = {
   courseController,
   instructorController,
   parentController,
+  paymentController,
   questionController
 };

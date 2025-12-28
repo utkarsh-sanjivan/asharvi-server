@@ -13,6 +13,7 @@ const childNutritionService = require('./childNutritionService');
 const courseService = require('./courseService');
 const parentService = require('./parentService');
 const instructorService = require('./instructorService');
+const paymentService = require('./paymentService');
 const questionService = require('./questionService');
 const otpService = require('./otpService');
 const notificationService = require('./notificationService');
@@ -26,6 +27,7 @@ module.exports = {
   courseService,
   parentService,
   instructorService,
+  paymentService,
   questionService,
   otpService,
   notificationService

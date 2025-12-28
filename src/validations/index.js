@@ -13,6 +13,7 @@ const childNutritionValidation = require('./childNutritionValidation');
 const { validateRequest, validateParams, validateQuery, sanitizeInput } = require('./commonValidation');
 const courseValidation = require('./courseValidation');
 const parentValidation = require('./parentValidation');
+const paymentValidation = require('./paymentValidation');
 const questionValidation = require('./questionValidation');
 const instructorValidation = require('./instructorValidation');
 
@@ -30,6 +31,7 @@ module.exports = {
   
   courseValidation,
   parentValidation,
+  paymentValidation,
   questionValidation,
   instructorValidation
 };
