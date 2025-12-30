@@ -1,8 +1,9 @@
 const { v4: uuidv4 } = require('uuid');
-const { tableName } = require('../config/dynamoConfig');
+const { getTableName } = require('../config/dynamoConfig');
 const dynamoRepository = require('./dynamoRepository');
 const { buildInstructorKeys } = require('./keyFactory');
 const logger = require('../utils/logger');
+const tableName = getTableName('instructor');
 
 const IMMUTABLE_FIELDS = new Set(['id', 'createdAt', 'updatedAt', 'email']);
 
