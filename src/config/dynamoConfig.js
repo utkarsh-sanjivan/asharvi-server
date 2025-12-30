@@ -36,6 +36,9 @@ const getEnvironment = () =>
   normalizeEnvironment(process.env.APP_ENV || process.env.ENVIRONMENT || process.env.NODE_ENV);
 
 const getTableName = (model) => {
+  if (process.env.DYNAMO_TABLE_NAME) {
+    return process.env.DYNAMO_TABLE_NAME;
+  }
   const envVar = MODEL_ENV_VARS[model];
   const override = envVar ? process.env[envVar] : null;
   if (override) return override;
