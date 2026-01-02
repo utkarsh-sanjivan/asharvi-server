@@ -1,10 +1,11 @@
 const { v4: uuidv4 } = require('uuid');
-const { tableName } = require('../config/dynamoConfig');
+const { getTableName } = require('../config/dynamoConfig');
 const dynamoRepository = require('./dynamoRepository');
 const { buildChildKeys } = require('./keyFactory');
 const logger = require('../utils/logger');
 
 const IMMUTABLE_FIELDS = new Set(['id', 'createdAt']);
+const tableName = getTableName('child');
 
 const formatDocument = (doc) => {
   if (!doc) return null;

@@ -1,8 +1,9 @@
 const { v4: uuidv4 } = require('uuid');
-const { tableName } = require('../config/dynamoConfig');
+const { getTableName } = require('../config/dynamoConfig');
 const dynamoRepository = require('./dynamoRepository');
 const { buildChildNutritionKeys } = require('./keyFactory');
 const logger = require('../utils/logger');
+const tableName = getTableName('child_nutrition');
 const format = (doc) => (doc ? { ...doc, _id: doc.id } : null);
 
 const createNutritionRecord = async (data) => {

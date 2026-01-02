@@ -1,7 +1,8 @@
 const { v4: uuidv4 } = require('uuid');
-const { tableName } = require('../config/dynamoConfig');
+const { getTableName } = require('../config/dynamoConfig');
 const dynamoRepository = require('./dynamoRepository');
 const { buildOtpKeys } = require('./keyFactory');
+const tableName = getTableName('otp');
 
 const format = (doc) => (doc ? { ...doc, _id: doc.id } : null);
 

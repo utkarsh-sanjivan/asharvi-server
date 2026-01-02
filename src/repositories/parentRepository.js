@@ -1,13 +1,14 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { v4: uuidv4 } = require('uuid');
-const { tableName } = require('../config/dynamoConfig');
+const { getTableName } = require('../config/dynamoConfig');
 const { JWT_SECRET, JWT_REFRESH_SECRET } = require('../config/jwtConfig');
 const dynamoRepository = require('./dynamoRepository');
 const { buildParentKeys } = require('./keyFactory');
 const logger = require('../utils/logger');
 
 const IMMUTABLE_FIELDS = new Set(['id', 'createdAt']);
+const tableName = getTableName('parent');
 
 const attachHelpers = (item) => {
   if (!item) return null;
